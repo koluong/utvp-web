@@ -1,3 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+<app-header (featureChange)="chosenFeature($event)"></app-header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <app-home *ngIf="selectedFeature === 'home'"></app-home>
+      <app-equipment *ngIf="selectedFeature === 'equipment'"></app-equipment>
+      <app-form *ngIf="selectedFeature === 'form'"></app-form>
+      <app-documentation *ngIf="selectedFeature === 'documentation'"></app-documentation>
+    </div>
+  </div>
+</div>

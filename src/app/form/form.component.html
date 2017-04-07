@@ -1,0 +1,160 @@
+<!-- Equipment Request Form -->
+<div [hidden]="submitted" class="container">
+    <form (ngSubmit)="onSubmit()" #requestForm="ngForm">
+      <h1 style="padding-bottom: 10px;">Equipment Request Form</h1>
+<!-- REMOVE WHEN FINISHED -->
+      TODO:: remove when finished:: {{diagnostic}}
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" required
+          placeholder="John Doe"
+          [(ngModel)]="request.name" name="name">
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" required
+          placeholder="john.doe@nbcuni.com"
+          [(ngModel)]="request.email" name="email" #emailState>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" required
+          placeholder="(818)777-7777"
+          [(ngModel)]="request.phone" name="phone" #phoneState>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="production">Name of Production</label>
+      <input type="text" class="form-control" id="production" required
+      placeholder="NBC Universal Production"
+      [(ngModel)]="request.production" name="production" #productionState>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location of Production</label>
+      <input type="text" class="form-control" id="location" required
+      placeholder="Bldg. 4250"
+      [(ngModel)]="request.location" name="location" #locationState>
+    </div>
+
+    <div class="form-group">
+      <label for="order">Order Details</label>
+      <textarea rows="4" cols="1" class="form-control" id="order" required
+      placeholder="Jane Doe - 206523236 - Dell Laptop + 2 Monitors" [(ngModel)]="request.order" name="order" #orderState>
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="equipment">Equipment Requested</label>
+      <select class="form-control" id="equipment" required
+      [(ngModel)]="request.equipment" name="equipment">
+        <option *ngFor="let ord of order" [value]="ord">{{ord}}</option>
+      </select>
+<!-- REMOVE WHEN FINISHED -->
+      TODO:: remove when finished:: {{request.equipment}}
+    </div>
+
+    <div class="form-group">
+      <label for=""></label>
+    </div>
+
+    <div class="form-group">
+      <label for="department">Which Department will receive this Equipment</label>
+      <select class="form-control" id="department" required
+      [(ngModel)]="request.department" name="department">
+        <option *ngFor="let dep of departments" [value]="dep">{{dep}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="deliveryDate">Needed by Date</label>
+      <p>We ask that you allow a 3 business day turn-around on all individual equipment requests. Multiple device requests must adhere to the followin - (2-5 Devices) must be made 5 (five) business days in advance - (5-20 Devices) must be made 10 (ten) business days in advance.</p>
+      <input type="text" class="form-control" maxlength="8" required
+      placeholder="mm/dd/yy" style="width:125px;"
+      [(ngModel)]="request.date" name="date">
+    </div>
+
+    <div class="form-group">
+      <label for="notes">Additional Notes</label>
+      <textarea rows="4" cols="1" class="form-control" id="notes"
+      maxlength="512" placeholder="(eg. request keyboards with numberpad, install Movie Magic Screenwriter, include disc drive)"
+      [(ngModel)]="request.notes" name="notes" #noteState></textarea>
+    </div>
+
+<!-- NBC Universal Policy -->
+    <div class="container">
+      <h2>NBC Universal Policy</h2>
+      <p>The receiver of this equipment is responsible for reading and adhering to the guidelines outlined below:</p>
+      <h4>Hardware</h4>
+      <p>The Receiver’s Business unit is responsible for the full cost of repair or replacement of any or all of the Equipment that is damaged, lost, or stolen from the time equipment is received until it is returned to the TV Production IT Client Services (TVP) Team. If the Equipment is lost, stolen or damaged, the receiver agrees to promptly notify the TVP team at <a href="mailto:tvp.support@nbcuni.com">tvp.support@nbcuni.com</a>.</p>
+      <h4>Software</h4>
+      <p>All NBCUniversal computers are delivered with standard configuration and pre-installed software. Certain software components are critical to the secure operation of your computer. NBCUniversal workers must never attempt to disable, modify or uninstall security and management software.  In addition, NBCUniversal workers must not create additional “User Accounts” or tamper with the accounts that were pre-configured by the TVP team. </p>
+      <h4>Support and Maintenance </h4>
+      <p>Technical support can be obtained by calling the NBCU Global Service Desk at <a href="tel:+1-818-777-4887">(818)777-4887</a> or by contacting the TVP team directly at <a href="mailto:tvp.support@nbcuni.com">tvp.support@nbcuni.com</a>.</p>
+      <h4>Return of Equipment and Software</h4>
+      <p>At the end of the season or end of employment with the company, you must return any NBCUniversal-owned computer equipment, communication devices or software. The equipment and software should be returned in good working order with software and related accessories. Arrangements must be made, prior to departure, by contacting the TVP team at <a href="mailto:tvp.support@nbcuni.com">tvp.support@nbcuni.com</a></p>
+    </div>
+
+    <div class="">
+      <h5>By clicking 'Submit' you agree to the NBC Universal Policy and its guidelines.</h5>
+    </div>
+
+    <div class="checkbox">
+      <input type="checkbox" name="" value="">
+    </div>
+
+    <button type="submit" class="btn btn-sucess"
+    [disabled]="!requestForm.form.valid">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted" class="container" style="padding-top:50px">
+  <h2>Request Form Submitted!</h2>
+  <h4>You submitted the following:</h4>
+  <div class="row">
+    <div class="col-sm-2"><b>Name</b></div>
+    <div class="col-sm-10">{{request.name}}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"><b>Email</b></div>
+    <div class="col-sm-10">{{request.email}}</div>
+  </div>
+  <div class="row">
+      <div class="col-sm-2"><b>Phone</b></div>
+      <div class="col-sm-10">{{request.phone}}</div>
+  </div>
+  <div class="row">
+      <div class="col-sm-2"><b>Production</b></div>
+      <div class="col-sm-10">{{request.production}}</div>
+  </div>
+  <div class="row">
+      <div class="col-sm-2"><b>Location</b></div>
+      <div class="col-sm-10">{{request.location}}</div>
+  </div>
+  <div class="row">
+      <div class="col-sm-2"><b>Order</b></div>
+      <div class="col-sm-10">{{request.order}}</div>
+  </div>
+  <div class="row">
+      <div class="col-sm-2"><b>Department</b></div>
+      <div class="col-sm-10">{{request.department}}</div>
+  </div>
+  <div class="row">
+      <div class="col-sm-2"><b>Date</b></div>
+      <div class="col-sm-10">{{request.date}}</div>
+  </div>
+  <div class="row">
+      <div class="col-sm-2"><b>Notes</b></div>
+      <div class="col-sm-10">{{request.notes}}</div>
+  </div>
+</div>
