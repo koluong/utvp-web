@@ -8,8 +8,10 @@ import { Computer } from './computer.model';
 })
 export class EquipmentComponent implements OnInit {
 
+  typeButtonSelected: string;
   typeSelected: Computer[];
   equipmentType:string[] = ['Mac', 'Windows', 'Peripherals'];
+  detailSelected: Computer;
 
   constructor() { }
 
@@ -17,26 +19,36 @@ export class EquipmentComponent implements OnInit {
   }
 
   macEquipment: Computer[] = [
-    new Computer('13-inch MacBook Pro', 'macOS Sierra', './assets/photo/mbp-2015-13.png'),
-    new Computer('21.5-inch iMac','macOS Sierra','./assets/photo/imac-2013-21.jpg')
+    new Computer('MacBook Pro', '13-inch macOS Sierra Laptop', './assets/photo/mbp-2015-13.png'),
+    new Computer('MacBook Air', '13-inch macOS Sierra Laptop', './assets/photo/mba-2015-13.jpg'),
+    new Computer('iMac','21.5-inch macOS Sierra Desktop','./assets/photo/imac-2013-21.jpg')
   ];
   windowsEquipment: Computer[] = [
+    new Computer('Dell Latitude','14-inch Windows 7 Laptop','./assets/photo/dell-lat-lt.png'),
     new Computer('Dell Optiplex','Windows 7 Desktop PC','./assets/photo/dell-opt-dt.jpg')
-
   ];
   peripheralsEquipment: Computer[] = [
-    new Computer('21-inch PC Monitor','Dell PC Monitor','./assets/photo/dell-mon-21.png'),
+    new Computer('PC Monitor','21-inch Dell Monitor','./assets/photo/dell-mon-21.png'),
+    new Computer('Printer','Personal Printer for Office','./assets/photo/brother-printer.jpg'),
+    new Computer('Television','32-inch to 60-inch Television','./assets/photo/tv.jpg'),
     new Computer('Kenny Luong','Super IT Professional','./assets/photo/koluong.jpg')
   ];
 
   selectType(type) {
     if (type == 'Mac') {
+      this.typeButtonSelected = 'Mac';
       this.typeSelected = this.macEquipment;
     } else if (type == 'Windows') {
+      this.typeButtonSelected = 'Windows';
       this.typeSelected = this.windowsEquipment;
     } else if (type == 'Peripherals') {
+      this.typeButtonSelected = 'Peripherals';
       this.typeSelected = this.peripheralsEquipment;
     }
+  }
+
+  showDetail(comp) {
+    this.detailSelected = comp;
   }
 
 }

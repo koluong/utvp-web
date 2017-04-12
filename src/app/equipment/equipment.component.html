@@ -6,6 +6,7 @@
 <div class="row">
   <div class="col-sm-4" *ngFor="let type of equipmentType">
     <button class="btn btn-primary btn-block type" role="button"
+    [ngClass]="{active: typeButtonSelected == type}"
     (click)="selectType(type)"
     >
       <div class="text-center">
@@ -16,19 +17,21 @@
 </div>
 <hr>
 <ng-template #pleaseSelect>
-  <h4 class="text-center">Please Select Equipment Type to Begin</h4>
+  <h4 class="text-center">Please Select Equipment Type</h4>
 </ng-template>
 <div class="row">
   <div class="" *ngIf="typeSelected; else pleaseSelect">
     <div class="col-sm-5" >
       <app-equipment-list
-
-      [viewType]="typeSelected">
+      [viewType]="typeSelected"
+      (selectDetail)="showDetail($event)">
       </app-equipment-list>
 
     </div>
     <div class="col-sm-7">
-      <app-equipment-detail></app-equipment-detail>
+      <app-equipment-detail
+      [computer]="detailSelected">
+      </app-equipment-detail>
     </div>
   </div>
 </div>

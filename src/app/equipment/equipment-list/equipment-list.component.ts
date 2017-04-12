@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Computer } from '../computer.model';
 
 @Component({
@@ -7,18 +7,20 @@ import { Computer } from '../computer.model';
   styleUrls: ['./equipment-list.component.css']
 })
 export class EquipmentListComponent implements OnInit {
-
   @Input() viewType: Computer[];
+  @Output() selectDetail = new EventEmitter<Computer>();
+  selectedComp: Computer;
 
   constructor() {
-    console.log("viewType: " + this.viewType);
+
   }
 
   ngOnInit() {
   }
 
-  test() {
-    console.log("viewType: " + this.viewType);
+  onSelectDetail(comp) {
+    this.selectedComp = comp;
+    this.selectDetail.emit(comp);
   }
 
 }

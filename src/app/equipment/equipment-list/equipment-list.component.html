@@ -1,6 +1,8 @@
 <a href="#"
   *ngFor="let comp of viewType"
-  class="list-group-item clearfix">
+  class="list-group-item clearfix"
+  [ngStyle]="{'border-width': comp == selectedComp  ? 'medium':'thin' }"
+  (click)="onSelectDetail(comp)">
     <div class="row">
       <div class="col-xs-8">
         <div class="pull-left">

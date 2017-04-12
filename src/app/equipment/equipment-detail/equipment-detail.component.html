@@ -1,3 +1,32 @@
-<p>
-  TODO:: remove when finished:: finish equipment-detail routing
-</p>
+<ng-template #pleaseSelect>
+  <h4 class="text-center">
+    Select Item to View
+  </h4>
+</ng-template>
+<div class=""
+*ngIf="computer;else pleaseSelect">
+  <div class="row">
+    <div class="col-12-xs" >
+      <img src="{{ computer.imagePath }}" alt="" style="max-height: 300px; display:block; margin: auto;">
+    </div>
+  </div>
+<hr>
+  <div class="row">
+    <div class="col-12-xs" class="text-center">
+      <h2>
+        {{ computer.name }}
+      </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6-xs col-xs-offset-3">
+      <ul>
+        <li>13.3-inch (Diagonal) LED-backlit display</li>
+        <li>2.7GHz dual-core Intel Core i5</li>
+        <li>Up to 10 hours battery life</li>
+        <li>256GB SSD</li>
+        <li>3.48 Pounds</li>
+      </ul>
+    </div>
+  </div>
+</div>
