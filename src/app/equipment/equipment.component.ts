@@ -26,7 +26,7 @@ export class EquipmentComponent implements OnInit {
   ];
   peripheralsEquipment: Computer[] = [
     new Computer('21-inch PC Monitor','Dell PC Monitor','./assets/photo/dell-mon-21.png'),
-    new Computer('Kenny Luong','Super Sexy IT Professional','./assets/photo/koluong.jpg')
+    new Computer('Kenny Luong','Super IT Professional','./assets/photo/koluong.jpg')
   ];
 
   selectType(type) {

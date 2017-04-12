@@ -9,6 +9,8 @@ import { EquipmentComponent } from './equipment/equipment.component';
 import { FormComponent } from './form/form.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { HomeComponent } from './home/home.component';
+import { EquipmentListComponent } from './equipment/equipment-list/equipment-list.component';
+import { EquipmentDetailComponent } from './equipment/equipment-detail/equipment-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HomeComponent } from './home/home.component';
     EquipmentComponent,
     FormComponent,
     DocumentationComponent,
-    HomeComponent
+    HomeComponent,
+    EquipmentListComponent,
+    EquipmentDetailComponent
   ],
   imports: [
     BrowserModule,
