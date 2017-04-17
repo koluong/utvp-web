@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  selectedFeature = 'home';
+  selectedFeature = 'default';
 
   chosenFeature(feature) {
     this.selectedFeature = feature;

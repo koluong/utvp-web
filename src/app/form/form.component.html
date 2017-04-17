@@ -109,12 +109,14 @@
       <h5>By clicking 'Submit' you agree to the NBC Universal Policy and its guidelines.</h5>
     </div>
 
-    <div class="checkbox">
-      <input type="checkbox" name="" value="">
+    <div class="row">
+      <div class="col-xs-12">
+        <button type="submit" class="btn btn-sucess"
+        [disabled]="!requestForm.form.valid">Submit</button>
+      </div>
     </div>
+    <hr>
 
-    <button type="submit" class="btn btn-sucess"
-    [disabled]="!requestForm.form.valid">Submit</button>
   </form>
 </div>
 

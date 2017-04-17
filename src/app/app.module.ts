@@ -11,6 +11,7 @@ import { DocumentationComponent } from './documentation/documentation.component'
 import { HomeComponent } from './home/home.component';
 import { EquipmentListComponent } from './equipment/equipment-list/equipment-list.component';
 import { EquipmentDetailComponent } from './equipment/equipment-detail/equipment-detail.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { EquipmentDetailComponent } from './equipment/equipment-detail/equipment
     DocumentationComponent,
     HomeComponent,
     EquipmentListComponent,
-    EquipmentDetailComponent
+    EquipmentDetailComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

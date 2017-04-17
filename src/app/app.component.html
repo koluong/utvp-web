@@ -1,6 +1,11 @@
 <app-header (featureChange)="chosenFeature($event)"></app-header>
 
-<div class="container">
+<div class="center-div home" *ngIf="selectedFeature === 'default'">
+  <p class="line-1 anim-typewriter">Hello.</p>
+</div>
+
+
+<div class="container" style="padding-bottom:20px;">
   <div class="row">
     <div class="col-sm-12">
       <app-home *ngIf="selectedFeature === 'home'"></app-home>
@@ -10,3 +15,5 @@
     </div>
   </div>
 </div>
+
+<app-footer>

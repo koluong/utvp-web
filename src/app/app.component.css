@@ -1,3 +1,55 @@
 .container {
   margin-top: 65px;
 }
+
+.home {
+  min-height: 100%;
+  overflow: hidden;
+  height: calc(100vh - 8em);
+  padding: 4em;
+  color: black;
+  font-family: 'Anonymous Pro', monospace;
+  background-color: white;
+}
+
+.line-1{
+    position: relative;
+    top: 50%;
+    width: 24em;
+    height: 70px;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 200%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+.center-div {
+  position: relative;
+  top: 50%;
+  width: 24em;
+  height: 70px;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 200%;
+  text-align: center;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  margin-top: 450px
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 1s steps(10) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 4em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: black;}
+  to{border-right-color: transparent;}
+}

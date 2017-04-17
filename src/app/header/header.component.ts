@@ -6,7 +6,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  featureActive: string = 'home';
+  featureActive: string = 'default';
 
   @Output() featureChange = new EventEmitter<string>();
 
