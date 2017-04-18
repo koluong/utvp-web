@@ -1,0 +1,20 @@
+.center-div {
+  position: relative;
+  top: 50%;
+  width: 24em;
+  height: 70px;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 200%;
+  text-align: center;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  margin-top: 200px;
+
+}
+
+.absolute-center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}

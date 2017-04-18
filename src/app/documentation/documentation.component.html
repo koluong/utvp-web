@@ -1,3 +1,17 @@
-<p>
-  documentation works!
-</p>
+<div class="center-div"
+*ngIf="!canView; else documentation">
+      <h1>Please input access code</h1>
+      <input type="text" #documentCode>
+      <div class="">
+        <button class="btn btn-primary" type="button" name="button"
+        (click)="checkCode(documentCode.value)">
+          Submit
+        </button>
+      </div>
+</div>
+
+<ng-template #documentation>
+  <h1>
+    This is the Documentation!
+  </h1>
+</ng-template>
