@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-sm-12">
-    <h1 class="text-center">Equipment</h1>
+    <h1 class="text-center" style="font-size: 350%; padding-bottom: 2%">Equipment</h1>
   </div>
 </div>
 <div class="row">
   <div class="col-sm-4" *ngFor="let type of equipmentType">
-    <button class="btn btn-primary btn-block type" role="button"
+    <button class="btn btn-primary btn-block btn-lg type" role="button"
     [ngClass]="{active: typeButtonSelected == type}"
     (click)="selectType(type)"
     >
@@ -17,7 +17,7 @@
 </div>
 <hr>
 <ng-template #pleaseSelect>
-  <h4 class="text-center">Please Select Equipment Type</h4>
+  <h1 class="text-center" style="font-size: 400%; padding-top: 20%">Please Select Equipment Type</h1>
 </ng-template>
 <div class="row">
   <div class="" *ngIf="typeSelected; else pleaseSelect">
